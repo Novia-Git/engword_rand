@@ -14,8 +14,8 @@ def generate_word(words, length):
     # 選擇num_words個隨機單字
     return random.sample(words, length)
 
-df = pd.read_excel(r'C:\異次元\wordFrequency.xlsx',sheet_name='1 lemmas') #從第二行讀取
-worddf = df[['lemma']] 
+df = pd.read_excel(r'C:\Users\wordFrequency.xlsx',sheet_name='1 lemmas') 
+worddf = df[['lemma']] # 只選擇單字的欄位
 word_s = worddf.values.tolist() # 轉成series
 
 # 每隔15秒隨機列印單字
