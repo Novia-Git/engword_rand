@@ -48,7 +48,7 @@ class MainWindow(QMainWindow):
         # 要產生單字的數量
         num_words = 20
         # 讀取單字列表
-        df = pd.read_excel(r'C:\異次元\wordFrequency.xlsx',sheet_name='1 lemmas') 
+        df = pd.read_excel(r'C:\User\wordFrequency.xlsx',sheet_name='1 lemmas') 
         worddf = df[['lemma']] # 只選擇單字的欄位
         word_s = worddf.values.tolist() # 轉成series
         selected_words = random.sample(word_s,num_words)
@@ -64,17 +64,10 @@ class MainWindow(QMainWindow):
         for i in range(20):
             random_word = random_words[i]
             label = self.labels[i]
-            # label.setText(f'<a href="http://www.example.com/{random_word}">{random_word}</a>')
             label.setText(f'<a href="https://dictionary.cambridge.org/zht/%E8%A9%9E%E5%85%B8/%E8%8B%B1%E8%AA%9E-%E6%BC%A2%E8%AA%9E-%E7%B9%81%E9%AB%94/{random_word}">{random_word}</a>')            
             font = QFont()
-            font.setPointSize(14)  # 設置字體大小為16
-            label.setFont(font)
-             
-        # 在界面上顯示隨機單字
-        # self.list_widget.clear()
-        # self.list_widget.addItems(random_words)
-       
-      
+            font.setPointSize(14)  # 設置字體大小為14
+            label.setFont(font)     
     
 if __name__ == '__main__':
     app = QApplication([])
